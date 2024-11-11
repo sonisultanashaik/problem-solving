@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // task1
+   let matrix = [[2, 3, 4],
+                 [5, 6, 7],
+                 [8, 9, 10]];
+   function productOfLeftDiagonal(matrix) {
+   // Check if the matrix is square
+   let rows = matrix.length;
+   for (let i = 0; i < rows; i++) {
+       if (matrix[i].length !== rows) {
+       throw new Error("The matrix is not square.");
+       }}
+   // Calculate the product of the left diagonal elements
+   let product = 1;
+   for (let i = 0; i < rows; i++) {
+       product *= matrix[i][i];
+   }
+   return product;
+   } 
+   console.log(productOfLeftDiagonal(matrix)); // Output: 120
+
+
+   // task2
+   // Find the sum of right diagonal elements
+   let matrixs = [[1, 2, 3],
+                     [4, 5, 6],
+                     [7, 8, 9]];
+       function sumRightDiagonal(matrixs) {
+       let sum = 0;
+       let a = matrixs.length;
+       for (let i = 0; i < a; i++) {
+           let b = matrixs[i][a - i - 1];
+           if (b) {
+               sum += b;
+           }
+       }
+       return sum;
+   }
+   console.log(sumRightDiagonal(matrixs)); // Output: 12 
+
+   </script>
+</body>
+</html>
